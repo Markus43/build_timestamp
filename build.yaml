@@ -2,16 +2,16 @@
 targets:
   $default:
     builders:
-      build_version:
+      build_timestamp:
         enabled: true
 
 builders:
-  build_version:
-    import: "package:build_version/builder.dart"
-    builder_factories: ["buildVersion"]
-    build_extensions: {"pubspec.yaml": ["lib/src/version.dart"]}
+  build_timestamp:
+    import: "package:build_timestamp/builder.dart"
+    builder_factories: ["buildTimestamp"]
+    build_extensions: {"pubspec.yaml": ["lib/src/timestamp.dart"]}
     defaults:
       options:
-        output: "lib/src/version.dart"
+        output: "lib/src/timestamp.dart"
     build_to: source
     auto_apply: dependents

@@ -1,19 +1,18 @@
-[![CI](https://github.com/kevmoo/build_version/workflows/CI/badge.svg?branch=master)](https://github.com/kevmoo/build_version/actions?query=workflow%3ACI+branch%3Amaster)
-[![Pub Package](https://img.shields.io/pub/v/build_version.svg)](https://pub.dev/packages/build_version)
-[![package publisher](https://img.shields.io/pub/publisher/build_version.svg)](https://pub.dev/packages/build_version/publisher)
+[![CI](https://github.com/Praxa-Sense/build_timestamp/workflows/CI/badge.svg?branch=master)](https://github.com/Praxa-Sense/build_timestamp/actions?query=workflow%3ACI+branch%3Amaster)
+[![Pub Package](https://img.shields.io/pub/v/build_timestamp.svg)](https://pub.dev/packages/build_timestasmp)
+[![package publisher](https://img.shields.io/pub/publisher/build_timestamp.svg)](https://pub.dev/packages/build_timestamp/publisher)
 
-Include the version of your package in our source code.
+Include the build_runner's timestamp in our source code.
 
-1. Add `build_version` to `pubspec.yaml`. Also make sure there is a `version`
-   field.
+1. Add `build_timestasmp` to `pubspec.yaml`.
 
-   ```yaml
-   name: my_pkg
-   version: 1.2.3
-   dev_dependencies:
-     build_runner: ^1.0.0
-     build_version: ^2.0.0
-   ```
+    ```yaml
+    name: my_pkg
+    version: 1.2.3
+    dev_dependencies:
+      build_runner: ^1.0.0
+      build_timestamp: ^0.1.0
+    ```
 
 2. Run a build.
 
@@ -21,11 +20,11 @@ Include the version of your package in our source code.
    > dart pub run build_runner build
    ```
 
-   `lib/src/version.dart` will be generated with content:
+   `lib/src/timestamp.dart` will be generated with content:
 
    ```dart
    // Generated code. Do not modify.
-   const packageVersion = '1.2.3';
+   const packageMillisecondsSinceEpoch = <MILLISECONDS_SINCE_EPOCH>;
    ```
 
 To change the path of the generated file, create a
@@ -37,7 +36,7 @@ customized:
 targets:
   $default:
     builders:
-      build_version:
+      build_timestamp:
         options:
-          output: lib/src/custom/path/to/version.dart
+          output: lib/src/custom/path/to/timestamp.dart
 ```
